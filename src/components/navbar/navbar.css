@@ -1,0 +1,30 @@
+
+.topbar{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  background-color: rgb(117, 63, 205);
+  }
+  
+  .links{
+    display: flex;
+    list-style-type: none; 
+  }
+  
+  .link-titulo{
+  color: black;
+  }
+  
+  .link{
+  padding: 0 6px;
+  color: black;
+  font-family: 'New Rocker', cursive;
+  }
+  
+  .titulo-nav{
+    font-size: 25px;
+    font-family: 'New Rocker', cursive;
+  }
+  
