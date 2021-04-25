@@ -4,6 +4,7 @@ import { Navbar } from "./components/navbar/nabvar"
 import { List } from "./components/list/list"
 import { ItemListContainer } from "./components/itemListContainer/itemListContainer"
 
+
 function App() {
 const products = [
   {
@@ -41,6 +42,7 @@ description:"la nueva era comienza",
     <div className="App">
 
      < Navbar/>
+     
   <ItemListContainer/>
      <List products={products} />
     </div>
