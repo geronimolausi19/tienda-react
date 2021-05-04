@@ -3,13 +3,39 @@ import { useEffect, useState } from "react"
 
 export const ItemList =  () => {
    
-    const [ buzos, setBuzos ] = useState([])
-    const buzosData = [
+    const [ remeras, setRemeras ] = useState([])
+    const remerasData = [
         {
-        name: 'hodie',
-        description: 'Buzo abrigado',
+        name: 'Charly Garcia',
+        description: 'Remeras negra con estampado',
         price: 450,
         stock: 5,
+        id:1
+      },{
+        name: 'Ratones paranoicos',
+        description: 'remera blanca con estampado',
+        price: 450,
+        stock: 5,
+        id:2
+      },{
+        name: 'El Flaco',
+        description: 'Remera negra con estampado',
+        price: 450,
+        stock: 5,
+        id:3
+      },{
+        name: 'Almendra',
+        description: 'La mejor remera del mundo',
+        price: 450,
+        stock: 5,
+        id:4
+      },{
+        name: 'Sumo',
+        description: 'remera negra de Luca Prodan',
+        price: 450,
+        stock: 5,
+        id:5
+        
       }
     ]
 
@@ -21,23 +47,22 @@ export const ItemList =  () => {
         }, 2000);
       });
     }
+
       useEffect(() => {
-        getProducts( buzosData)
+        getProducts( remerasData )
           .then(res =>{ 
-            console.log(res)
-              setBuzos(res)
-              console.log(buzos)
-              console.log(res)
-            
-      })}, []);
+              setRemeras(res)
+             
+      })
+       },[]);
 
 return(
  
  <div>
-          {buzos.map( (product) => 
+          {remeras.map( (product) => 
           
             <Item product={product} />
-
+          
           )} 
       
         </div>

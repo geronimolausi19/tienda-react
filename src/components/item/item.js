@@ -1,13 +1,18 @@
+import "./item.css"
+import {ItemCount} from "../itemCount/itemCount"
+import {Link} from "react-router-dom"
 
-
-
-
-export const Item = (props) => {
+export const Item = ({product}) => {
    
-   const products = props.product
+   
   
   return(
-    <h1>{products.name}</h1>
+  <div className="carts" >
+    <h1>{product.name}</h1>
+    <h2>{product.description}</h2>
+    <button><Link to={"/detail/:productId"}> Vamos al producto</Link></button>
+    </div>
+    
   )
     
 
@@ -21,19 +26,11 @@ export const Item = (props) => {
 
 
 
-// useEffect(() => {
-//     getBuzos( buzosData )
-
-//     .then(result => {
-//         console.log(result)
-//         setBuzos(result);
-//     });
-// }, [])
 
 
 
 
-
+// https://challenge-meli-backend.herokuapp.com/api
 
 
 
@@ -82,12 +79,3 @@ export const Item = (props) => {
 //     setBuzos(error)
 // }
 
-
-// let solicitudDeBuzo = new Promise ((resolve, rejected) =>{
-// console.log("waaxxs me traes algo asi medio, descampanante")
-// setTimeout(() => {
-//     resolve("caipirosshca")
-// }, 2000)
-// })
-// .then(recibiMiBuzo)
-// .catch(noLoRecibi)

@@ -1,0 +1,8 @@
+.carts{
+    border: 1px solid black;
+    display: inline-block;
+    width: auto;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+}

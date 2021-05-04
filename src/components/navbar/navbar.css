@@ -28,3 +28,6 @@
     font-family: 'New Rocker', cursive;
   }
   
+  .active-nav{
+    background-color: rgb(87, 30, 87);
+  }
