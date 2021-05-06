@@ -1,11 +1,18 @@
-import {useState, useEffect} from "react"
-import {ItemDetail} from "../itemDetail/itemDetail"
-import{useParams} from "react-router"
-import {ItemCount} from "../itemCount/itemCount"
+import { useState, useEffect} from "react"
+import { Link } from "react-router-dom"
+import { useParams} from "react-router-dom"
 
-export const ItemDetailContainer = () => {
 
-    const remerasData = [
+
+
+
+
+export const CategoriesList = () => {
+    const { categoriaId } = useParams()
+
+    const [productosCategoria, setProductosCategoria] = useState([])
+
+    const categoryData = [
 
         {
         name: 'Charly Garcia',
@@ -54,42 +61,45 @@ export const ItemDetailContainer = () => {
         
       }
     ]
-
-const { productId } =useParams()
-const [ detalle , setDetalle] =  useState([])
-
-
-const getProducts  = new Promise((res, rej) => {
-     setTimeout(() =>{
-res(remerasData)
-     
-     }, 2000);
-   });
+const getProducts = new Promise((res, rej) => {
  
-
- useEffect(() => { console.log(detalle) 
-    getProducts
-      . then((res ) => {
-        console.log(res)
-       res.forEach((articulo) => {
-    
-          if (articulo.id === productId) {
-            
-            setDetalle(articulo);
-            console.log(detalle)
-          } 
-        });
-      })
-  
-  }, [productId]);
-
-   return(
-   <div>
-       <ItemDetail item={detalle}/>
+   res(categoryData)
        
-   </div>
-)
+      })
+
+useEffect(() => {
+    getProducts
+    .then((res) =>{
+        console.log(res)
+        const productosFiltrados= res.filter((color)=>
+    color.category==="color" )
+    setProductosCategoria(productosFiltrados)
+    console.log(productosCategoria)
+      console.log(productosFiltrados)
+     
+    })
+    
 }
-      
+, [categoriaId])
+    
+
+    return (
+<div>
+    {productosCategoria. map((producto)=>
+   <p>{producto.name}
+    {producto.price}
+    <img src={producto.img} alt="producto" />
+   </p>
+  
+   )}
+   
+</div>
+    )
+        
+    
 
     
+}
+
+
+

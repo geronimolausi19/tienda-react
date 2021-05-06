@@ -5,19 +5,24 @@ export const ItemDetail = ({ item }) =>{
 
 return(
     <main>
-<div>
-        <h2>{item.name}</h2>
-        <h4>${item.price}</h4>
+    {item ? 
+       <div>
+         <h1>{item.name}</h1>
+         <h4>{item.price}</h4>
         <img src={item. img} alt="item" />
+        
+        <ItemCount count={item.stock}/>
+</div>
 
-        </div>
+
+     : null }
+        
+        
         <Link to="/">
             Volver
         </Link>
+ 
 
-<div>
-<ItemCount stock="5"/>
-</div>
 
 </main>
 )}

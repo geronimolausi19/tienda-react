@@ -28,7 +28,14 @@ to={"/god/:pantalonId"}
    </NavLink>
              </li>
 
-
+<li>
+  <NavLink
+  to={"/categories/:categoriaId"}
+  className="link-titulo"
+activeClassName="active-nav" >
+    remeras
+  </NavLink>
+</li>
 
 
          </ul>

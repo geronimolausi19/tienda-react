@@ -6,7 +6,7 @@ import {ItemDetailContainer} from "./components/itemDetailContainer/itemDetailCo
 import {BrowserRouter, Switch, Route} from "react-router-dom"
 import { Home }  from "./pages/home"
 import { God } from "./pages/god"
-import { ItemDetail } from './components/itemDetail/itemDetail';
+import { CategoriesList} from "./components/categoriesList/categoriesList"
 
 
 function App() {
@@ -25,6 +25,10 @@ function App() {
 
     <Route path="/detail/:productId">
       <ItemDetailContainer/>
+    </Route>
+    <Route path="/categories/:categoriaId">
+<CategoriesList/>
+
     </Route>
 
     </Switch>

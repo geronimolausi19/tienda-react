@@ -10,8 +10,11 @@ export const Item = ({product}) => {
   <div className="carts" >
     <h1>{product.name}</h1>
     <h2>{product.description}</h2>
-    <button><Link to={"/detail/:productId"}> Vamos al producto</Link></button>
+    <img src={product. img} alt="producto" />
+    <button><Link to={`/detail/${product.id}`} > Vamos al producto</Link></button>
+    
     </div>
+
     
   )
     
@@ -21,7 +24,7 @@ export const Item = ({product}) => {
 
 
 
-
+        
 
 
 
