@@ -1,8 +1,38 @@
-.carts{
-    border: 1px solid black;
-    display: inline-block;
-    width: auto;
-    margin: auto;
+.carts{ padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
     text-align: center;
-    padding: 5px;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flexbox;
+    overflow: hidden;
 }
+
+
+.div-carts{
+    width: 600px;
+   height: 600px;
+   margin-left: 450px;
+ 
+}
+
+.imagen{
+    width: 200 px;
+}
+
+.boton{
+	display: inline-block; 
+	padding: 20px 40px;
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	vertical-align: middle;
+	font-family: 'Rubik One', sans-serif;
+	text-decoration: none;
+	font-size: 4vw;
+	transition: all .5s;
+	background-color: #3498db;
+  }

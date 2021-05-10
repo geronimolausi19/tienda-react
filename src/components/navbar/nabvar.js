@@ -4,13 +4,19 @@ import { CartWidget } from "../cartWidget/cartWidget"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import{faGlobe} from "@fortawesome/free-solid-svg-icons"
 import { NavLink } from "react-router-dom"
+import { CategoriesList } from "../categories/categoriesList/categoriesList"
+import{useParams} from "react-router"
+
+
 
 export function Navbar () {
   
 return (  
+  
 <header className="topbar">
 
-  <p className="logo"><span className="titulo-nav">Mestiza</span></p>
+ <NavLink className="titulo-nav link-titulo"
+  to={"/"}>Mestiza</NavLink> 
  <p><FontAwesomeIcon icon={faGlobe}/></p>
  <p><FontAwesomeIcon icon={faGlobe}/></p>
  <p><FontAwesomeIcon icon={faGlobe}/></p> 
@@ -20,7 +26,7 @@ return (
          <ul className="links">
            <li className="link">
 <NavLink
-to={"/god/:pantalonId"}
+to={"/god/:usuarioId"}
  className="link-titulo"
   activeClassName="active-nav"
   >
@@ -29,12 +35,8 @@ to={"/god/:pantalonId"}
              </li>
 
 <li>
-  <NavLink
-  to={"/categories/:categoriaId"}
-  className="link-titulo"
-activeClassName="active-nav" >
-    remeras
-  </NavLink>
+<CategoriesList/>
+  
 </li>
 
 

@@ -49,7 +49,7 @@ export const ItemDetailContainer = () => {
         price: 450,
         stock: 5,
         id:"5",
-        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Qug4b4ps2G8sc65RNFqUWcytFQtMuaXrYQ&usqp=CAU",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA-u6eWKZPVEMvqQnO9t7W8DTAcgVLcTtXAw&usqp=CAU",
         category:"color"
         
       }
@@ -86,6 +86,7 @@ res(remerasData)
    return(
    <div>
        <ItemDetail item={detalle}/>
+       
        
    </div>
 )

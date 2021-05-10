@@ -1,4 +1,6 @@
 import {Item} from "../item/item"
+import "../item/item.css"
+
 import { useEffect, useState } from "react"
 
 export function ItemList() {
@@ -48,20 +50,18 @@ export function ItemList() {
       price: 450,
       stock: 5,
       id:"5",
-      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Qug4b4ps2G8sc65RNFqUWcytFQtMuaXrYQ&usqp=CAU",
+      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA-u6eWKZPVEMvqQnO9t7W8DTAcgVLcTtXAw&usqp=CAU",
       category:"color"
       
     }
   ]
 
     const getProducts = new Promise((res, rej) => {
-        setTimeout( function(){
+        
         res(remerasData)
           
-        }, 2000);
-      });
-    
-
+     
+      }); 
       useEffect(() => {
         getProducts
           .then((res) => setRemeras(res))
@@ -71,7 +71,7 @@ export function ItemList() {
 
 return(
  
- <div>
+ <div className="div-carts">
           {remeras.map( (product) => 
           
             <Item product={product} />

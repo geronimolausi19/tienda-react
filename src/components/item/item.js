@@ -3,15 +3,14 @@ import {ItemCount} from "../itemCount/itemCount"
 import {Link} from "react-router-dom"
 
 export const Item = ({product}) => {
-   
-   
-  
+   console.log(product)
+
   return(
   <div className="carts" >
     <h1>{product.name}</h1>
     <h2>{product.description}</h2>
-    <img src={product. img} alt="producto" />
-    <button><Link to={`/detail/${product.id}`} > Vamos al producto</Link></button>
+    <img className="imagen" src={product. img} alt="producto" />
+    <button ><Link to={`/detail/${product.id}`} > Vamos al producto</Link></button>
     
     </div>
 

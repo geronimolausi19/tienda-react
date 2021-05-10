@@ -3,6 +3,7 @@ import {Link} from "react-router-dom"
 
 export const ItemDetail = ({ item }) =>{
 
+    
 return(
     <main>
     {item ? 

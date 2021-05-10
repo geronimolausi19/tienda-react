@@ -5,8 +5,8 @@ import { Navbar } from "./components/navbar/nabvar"
 import {ItemDetailContainer} from "./components/itemDetailContainer/itemDetailContainer"
 import {BrowserRouter, Switch, Route} from "react-router-dom"
 import { Home }  from "./pages/home"
-import { God } from "./pages/god"
-import { CategoriesList} from "./components/categoriesList/categoriesList"
+import { Usuario } from "./pages/god"
+import {CategoriesDetail} from "./components/categories/categoriesDetail/categoriesDetail"
 
 
 function App() {
@@ -19,17 +19,20 @@ function App() {
       <Home/>
     </Route>
     
-    <Route  path="/god/:pantalonId">
-<God/>
+    <Route  path="/god/:suarioId">
+<Usuario/>
     </Route>
 
     <Route path="/detail/:productId">
       <ItemDetailContainer/>
     </Route>
-    <Route path="/categories/:categoriaId">
-<CategoriesList/>
+   
 
+    <Route path="/categoria/:categoriaId">
+<CategoriesDetail/>
     </Route>
+
+   
 
     </Switch>
     </BrowserRouter> 
