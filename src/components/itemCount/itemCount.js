@@ -27,7 +27,7 @@ return (
   <div>        
     <div>
         <button onClick={Sumar} > + </button>
-        <p>Cantidad de items en el carrito {count} {console.log(count)}</p>
+        <p>Cantidad de items en el carrito{count} {console.log(count)}</p>
         <button onClick={Restar} > - </button>
         </div>
 <br/>

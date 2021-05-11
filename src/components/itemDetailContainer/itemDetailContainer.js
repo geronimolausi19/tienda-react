@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react"
 import {ItemDetail} from "../itemDetail/itemDetail"
 import{useParams} from "react-router"
-import {ItemCount} from "../itemCount/itemCount"
+
 
 export const ItemDetailContainer = () => {
 
