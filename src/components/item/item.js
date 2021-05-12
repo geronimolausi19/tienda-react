@@ -1,5 +1,5 @@
 import "./item.css"
-import {ItemCount} from "../itemCount/itemCount"
+
 import {Link} from "react-router-dom"
 
 export const Item = ({product}) => {

@@ -3,8 +3,6 @@ import {Link} from "react-router-dom"
 
 export const ItemCount = ({stock, initial, onAdd}) => {
    
-
-
 const [count, setCount] = useState(initial)
 
 const Sumar = () => {         
@@ -21,8 +19,6 @@ const Restar = () => {
     }
 }
   
-
-    
 return (   
   <div>        
     <div>

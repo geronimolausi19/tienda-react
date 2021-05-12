@@ -9,7 +9,7 @@ import { CategoriesList } from "../categories/categoriesList/categoriesList"
 
 
 
-export function Navbar () {
+export function Navbar ({itemQty=0}) {
   
 return (  
   
@@ -26,11 +26,11 @@ return (
          <ul className="links">
            <li className="link">
 <NavLink
-to={"/god/:usuarioId"}
+to={"/carrito/:carritoId"}
  className="link-titulo"
   activeClassName="active-nav"
   >
-  <CartWidget/>
+  <CartWidget/>({itemQty})
    </NavLink>
              </li>
 

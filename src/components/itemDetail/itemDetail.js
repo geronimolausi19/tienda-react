@@ -9,7 +9,6 @@ const [finishButton, setFinishButton] = useState (false)
 const onAdd = (qty) => {
     setQty(qty)
 }
-    
 
 useEffect(() => {
  if( qty!==0) {
@@ -29,17 +28,14 @@ return(
         <ItemCount stock={item.stock} initial={1}  onAdd={onAdd}/>
 
         {finishButton ? (
-            <Link to="/god/:suarioId"  onClick={()=>{setQty(0)
+            <Link to="/carrito/:carritoId"  onClick={()=>{setQty(0)
             }}
             > vamo a pagar
             </Link>
-        )  : null }
-        
+        )  : null }  
 </div>
 
-<Link
-      
-        to="/"
+<Link   to="/"
         onClick={() => {
           setQty(0);
         }}>

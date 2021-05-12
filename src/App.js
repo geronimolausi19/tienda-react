@@ -5,9 +5,9 @@ import { Navbar } from "./components/navbar/nabvar"
 import {ItemDetailContainer} from "./components/itemDetailContainer/itemDetailContainer"
 import {BrowserRouter, Switch, Route} from "react-router-dom"
 import { Home }  from "./pages/home"
-import { Usuario } from "./pages/god"
+import { Usuario } from "./pages/carrito"
 import {CategoriesDetail} from "./components/categories/categoriesDetail/categoriesDetail"
-
+import {CartContext} from "./context/cartContext/cartContext"
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
       <Home/>
     </Route>
     
-    <Route  path="/god/:suarioId">
+    <Route  path="/carrito/:carritoId">
 <Usuario/>
     </Route>
 
