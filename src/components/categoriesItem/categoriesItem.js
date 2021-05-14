@@ -1,12 +1,18 @@
 
 
-import {Link} from "react-router-dom"
 
+import {useContext} from "react"
+import { CartContext} from "../../context/cartContext/cartContext"
+
+import {Link} from "react-router-dom"
 
 export const CategoriesItem = ({item}) =>{
     
+    
+     const cart = useContext(CartContext)
 
-    console.log({item})
+
+    console.log("cart=>" ,cart)
         return(
             <main>
             {item ? 

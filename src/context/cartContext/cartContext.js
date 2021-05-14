@@ -1,21 +1,30 @@
-import { createContext } from "react"
+import { createContext, useState}  from "react"
 
+export const CartContext = createContext()
 
+export const  CartProvider = ({children}) =>{
 
-const itemExample =     {
-    name: 'Charly Garcia',
-    description: 'Remeras negra con estampado',
-    price: 450,
-    stock: 5,
-    id:"1",
-    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAGGolEK0w6xnMG6V8K-UDKnTKRLf9iW-54Q&usqp=CAU",
-    category:"blanca"
+    const [cart, setCart] = useState([])
 
+    const [quantity, setQuantity] = useState (0)
+
+const addToCart = (item) => {
+    setCart ([...cart, item])
+    setQuantity(cart.length)
+    console.log(cart)
     
+}
 
-  }
 
+const removeFromCart = (itemId) =>{
+const newCart = cart.filter(item=>item.id !== itemId)
 
-export const CartContext = createContext([itemExample])
+    setCart (newCart)
+}
 
-export const CartProvider = CartContext.Provider
+    return (
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, quantity }}>
+         {children} {console.log(cart)}
+          </CartContext.Provider>
+    )
+}

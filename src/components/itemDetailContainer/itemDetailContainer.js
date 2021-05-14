@@ -67,16 +67,16 @@ res(remerasData)
    });
  
 
- useEffect(() => { console.log(detalle) 
+ useEffect(() => {  
     getProducts
       . then((res ) => {
-        console.log(res)
+      
        res.forEach((articulo) => {
     
           if (articulo.id === productId) {
             
             setDetalle(articulo);
-            console.log(detalle)
+            
           } 
         });
       })

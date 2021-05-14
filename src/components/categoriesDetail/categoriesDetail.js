@@ -4,10 +4,12 @@ import { useParams } from "react-router-dom"
 import { CategoriesItem} from "../categoriesItem/categoriesItem"
 
 
+import {useContext} from "react"
+
 
  export const CategoriesDetail = () => {
 
-      
+  const cart = useContext
 
                 const remerasData = [
             
@@ -102,17 +104,3 @@ import { CategoriesItem} from "../categoriesItem/categoriesItem"
 
 
 
-
-//  useEffect(() => { console.log(productosCategoria) 
-//   getProducts
-//     . then((res ) => {
-//       console.log(res)
-//     const productosFiltrados= res.filter((articulo) => 
-//    articulo.category === categoriaId) 
-          
-//    console.log(productosFiltrados)
-//           setProductosCategoria(productosFiltrados)
-//           console.log(productosCategoria)
-        
-//       });
-//     } , [categoriaId])

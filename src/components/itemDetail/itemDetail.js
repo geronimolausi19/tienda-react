@@ -1,22 +1,25 @@
 import {ItemCount} from "../itemCount/itemCount"
 import {Link} from "react-router-dom"
-import React, { useState, useEffect} from "react"
+import  { useContext, useState, useEffect} from "react"
+import {CartContext} from "../../context/cartContext/cartContext"
 
 export const ItemDetail = ({ item }) =>{
 const [qty, setQty] = useState(0)
 const [finishButton, setFinishButton] = useState (false)
+const {addToCart} = useContext(CartContext)
 
+const goToPayment = () =>{
+addToCart(item)
+console.log(item)
+}
 const onAdd = (qty) => {
     setQty(qty)
 }
-
 useEffect(() => {
  if( qty!==0) {
      setFinishButton(true)
  }
- console.log(qty)
 }, [qty])
-
 return(
     <main>
     
@@ -24,11 +27,10 @@ return(
          <h1>{item.name}</h1>
          <h4>{item.price}</h4>
         <img src={item. img} alt="item" />
-        
         <ItemCount stock={item.stock} initial={1}  onAdd={onAdd}/>
 
         {finishButton ? (
-            <Link to="/carrito/:carritoId"  onClick={()=>{setQty(0)
+            <Link to="/carrito/:carritoId"  onClick={()=>{goToPayment()
             }}
             > vamo a pagar
             </Link>
@@ -43,8 +45,5 @@ return(
         </Link>
     
        
- 
-
-
 </main>
 )}

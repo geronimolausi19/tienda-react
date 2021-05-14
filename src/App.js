@@ -6,13 +6,14 @@ import {ItemDetailContainer} from "./components/itemDetailContainer/itemDetailCo
 import {BrowserRouter, Switch, Route} from "react-router-dom"
 import { Home }  from "./pages/home"
 import { Usuario } from "./pages/carrito"
-import {CategoriesDetail} from "./components/categories/categoriesDetail/categoriesDetail"
-import {CartContext} from "./context/cartContext/cartContext"
+import {CategoriesDetail} from "./components/categoriesDetail/categoriesDetail"
+import { CartProvider} from "./context/cartContext/cartContext"
 
 function App() {
 
   return (
   <BrowserRouter>
+  <CartProvider>
   < Navbar/>
   <Switch>
     <Route exact path="/">
@@ -35,6 +36,7 @@ function App() {
    
 
     </Switch>
+    </CartProvider>
     </BrowserRouter> 
   )
 } 

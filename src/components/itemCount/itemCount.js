@@ -23,13 +23,13 @@ return (
   <div>        
     <div>
         <button onClick={Sumar} > + </button>
-        <p>Cantidad de items en el carrito{count} {console.log(count)}</p>
+        <p>Cantidad de items en el carrito, {count} </p>
         <button onClick={Restar} > - </button>
         </div>
 <br/>
 <div>
-        <button >Agregar al carrito</button>
-    <Link onClick={ () => onAdd(count) } >añadir al carrito</Link>
+        <button >
+    <Link onClick={ () => onAdd(count) } >añadir al carrito</Link></button>
     </div>
      </div>
     )
