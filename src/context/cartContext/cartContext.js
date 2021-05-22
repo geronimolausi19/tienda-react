@@ -2,29 +2,106 @@ import { createContext, useState}  from "react"
 
 export const CartContext = createContext()
 
+
 export const  CartProvider = ({children}) =>{
 
     const [cart, setCart] = useState([])
 
-    const [quantity, setQuantity] = useState (0)
 
-const addToCart = (item) => {
-    setCart ([...cart, item])
-    setQuantity(cart.length)
-    console.log(cart)
+//Añadir al carrito
+const addToCart = (id,price,imageId,stock,name, qty) => {
+    console.log(name)
+    const existingIndex = cart.findIndex((item) => item.name === name);
+     
+    
+    if (existingIndex >= 0) {
+        cart[existingIndex] = {
+          ...cart[existingIndex],
+          qty: cart[existingIndex].qty + qty,
+        };
+      } else {
+        setCart([
+        ...cart,
+        
+        {
+            id:id,
+            price:price,
+         imageId:imageId,
+                stock:stock,
+               name:name,
+                qty:qty,
+          },
+        ]);
+      } 
     
 }
 
-
-const removeFromCart = (itemId) =>{
-const newCart = cart.filter(item=>item.id !== itemId)
-
-    setCart (newCart)
+//Cantidad de productos totales
+const productsCount= () =>{
+    return cart.length
 }
 
+//Remover del carrito
+const removeFromCart = (itemInCart) => {
+    const existingIndex = cart.findIndex((item) => item.id === itemInCart.id);
+    const cartCopy = Array.from(cart);
+
+    if (existingIndex >= 0) {
+      cartCopy.splice(existingIndex, 1);
+      setCart(cartCopy);
+    }
+  };
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, quantity }}>
-         {children} {console.log(cart)}
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart,  productsCount }}>
+         {children} 
           </CartContext.Provider>
     )
 }
+
+
+
+//gtihub de un profe  https://github.com/angelicamolero/OnlineShop
+
+// video de firebase  https://www.youtube.com/watch?v=itNsRn1kjLU
+
+// codigo de form     https://stackblitz.com/edit/react-gekb7j?file=src/App.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const addToCart = (id,price,imageId,stock,name, qty) => {
+//     const existingIndex = cart.findIndex((item) => item.id === id)
+    
+
+//     if(existingIndex>=0){
+
+//     }
+
+
+//     setCart ([...cart, {
+//         id:id,
+//     price:price,
+// imageId:imageId,
+//     stock:stock,
+//     name:name,
+//     qty:qty,
+    
+
+// }])
+
+//     setQuantity(cart.length)
+   
+    
+// }

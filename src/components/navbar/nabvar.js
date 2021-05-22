@@ -5,12 +5,12 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import{faGlobe} from "@fortawesome/free-solid-svg-icons"
 import { NavLink } from "react-router-dom"
 import { CategoriesList } from "../categoriesList/categoriesList"
+import {CartContext} from "../../context/cartContext/cartContext"
+import {useContext} from "react"
 
 
-
-
-export function Navbar ({itemQty=0}) {
-  
+export function Navbar () {
+        const {addToCart, productsCount} = useContext(CartContext)
 return (  
   
 <header className="topbar">
@@ -19,7 +19,7 @@ return (
   to={"/"}>Mestiza</NavLink> 
  <p><FontAwesomeIcon icon={faGlobe}/></p>
  <p><FontAwesomeIcon icon={faGlobe}/></p>
- <p><FontAwesomeIcon icon={faGlobe}/></p> 
+ <p><FontAwesomeIcon icon={faGlobe}/></p>       
 
 
  <nav className="navigation">
@@ -30,7 +30,7 @@ to={"/carrito/:carritoId"}
  className="link-titulo"
   activeClassName="active-nav"
   >
-  <CartWidget/>({itemQty})
+  <CartWidget/> <span>({productsCount()})</span>
    </NavLink>
              </li>
 

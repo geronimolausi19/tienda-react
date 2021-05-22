@@ -3,7 +3,8 @@ import {ItemListContainer} from "../components/itemListContainer/itemListContain
 export function Home () {
     return(
 <main>
-
+    
+<h1>Mestiza</h1>
 <ItemListContainer/>
        
 </main>

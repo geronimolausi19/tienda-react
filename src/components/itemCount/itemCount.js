@@ -1,36 +1,41 @@
-import React, { useState } from "react"
+import React, { useState, useEffect} from "react"
 import {Link} from "react-router-dom"
-
-export const ItemCount = ({stock, initial, onAdd}) => {
+export const ItemCount = ({stock, initial, qty, setQty}) => {
    
-const [count, setCount] = useState(initial)
+
 
 const Sumar = () => {         
-    if(count < stock) {     
-      setCount(count + 1)   
+    if(stock > qty ) {     
+      setQty(qty + 1)   
      
     }
 }
 
 const Restar = () => {        
-    if(count > 1) {        
-      setCount(count - 1)      
-      
+    if(qty > 1) {        
+      setQty(qty - 1)       
+     
     }
 }
-  
+
+
+useEffect(() => {
+  console.log(qty)
+}, [qty])
+
+
 return (   
   <div>        
     <div>
         <button onClick={Sumar} > + </button>
-        <p>Cantidad de items en el carrito, {count} </p>
+        <p>Cantidad de items en el carrito, {qty} </p>
         <button onClick={Restar} > - </button>
         </div>
 <br/>
 <div>
-        <button >
-    <Link onClick={ () => onAdd(count) } >añadir al carrito</Link></button>
-    </div>
+        
+
+     </div>
      </div>
     )
 }
