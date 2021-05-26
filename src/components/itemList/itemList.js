@@ -8,7 +8,7 @@ export function ItemList() {
    
     
 const [items, setItems ] = useState([])
-const [withoutItems, setWithoutItems] = useState ([false])
+
 
 
 useEffect(()=> 
