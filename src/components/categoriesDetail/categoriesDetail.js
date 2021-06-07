@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import { CategoriesItem} from "../categoriesItem/categoriesItem"
 import { Link} from "react-router-dom"
 import { getFirestore} from "../../firebase/index"
-
+import "./categoriesDetail.css"
 import {useContext} from "react"
 
 
@@ -33,54 +33,33 @@ useEffect(()=>
       console.log(items)
     },[categoriaId])
 
-  
-     
-
-
-   
-
-            
          return (
-<div>
 
+
+
+           <div>
+<h1 className="titulo"> Rock {categoriaId}</h1>
+
+<div className="div-container">
  {items.length< 1 ?
  <Fragment>
    <p>Disculpe amigillo mio, los productos ya volaron!!! Ahora le toca a usted. </p>
-   <Link to= "/">Vuele</Link>
+ 
  </Fragment>
  :
+ 
  items.map((item)=>
- <CategoriesItem item={item}   />
+ <div className="carts"><CategoriesItem item={item}   /> </div>
  )
 
  }
+ 
 </div>
+<Link to= "/"><button className="botonVolver">Volver</button></Link>    
+         </div>
          )
-
-
  }
 
 
 
 
-
-//    const getProducts  = new Promise((res, rej) => {
-                 
-//             res(remerasData)
-                 
-                 
-//                });
-             
-            
-//  useEffect(() => { 
-//    getProducts   . then((res ) => {
-//       console.log(res)
-//     const productosFiltrados= res.filter((articulo) => 
-//    articulo.category === categoriaId) 
-          
-//    console.log(productosFiltrados)
-//           setProductosCategoria(productosFiltrados)
-//           console.log(productosCategoria)
-        
-//       });
-//    } , [categoriaId])

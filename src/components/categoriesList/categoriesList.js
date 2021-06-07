@@ -10,8 +10,8 @@ import { useParams } from "react-router-dom"
 
    const [productosCategoria, setProductosCategoria] = useState(false)
 
-  const categoryData = [ {id: '1', name: 'Nacionales'},
-   {id: '2', name: 'Internacionales'}
+  const categoryData = [ {id: '1', name: 'Nacional'},
+   {id: '2', name: 'Internacional'}
  ]
 
 

@@ -10,7 +10,7 @@ import {useContext} from "react"
 
 
 export function Navbar () {
-        const {addToCart, productsCount} = useContext(CartContext)
+        const {productsCount} = useContext(CartContext)
 return (  
   
 <header className="topbar">

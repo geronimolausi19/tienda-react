@@ -1,0 +1,54 @@
+.modal{
+    background-color: rgba(0, 0,0,.75);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:9999;
+    display: none;
+    justify-content: center;
+    align-items:center ;
+    
+
+
+}
+
+.modal-dialog{
+    background: rgb(117, 63, 205);;
+    padding: 10px;
+    width:560px;
+    height: 480px;
+    border-radius: 10px;
+
+
+
+  
+   
+    justify-content: space-between;
+   
+  
+    box-shadow: 6px 6px 6px 6px rgb(0 0 0 / 16%);
+ 
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+   
+    
+
+
+
+}
+
+
+.modal-open{
+    display:grid;
+}
+
+.boton-cerrar{
+border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    margin-left: 530px;
+    cursor: pointer;
+}

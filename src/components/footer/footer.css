@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300&display=swap');
+
+
+.main-footer{
+    
+margin-top: 100px;
+    color: black;
+    
+    position: relative;
+    bottom:0
+
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.col-sm{
+    text-align: center;
+}
+
+.hr{
+    height: 1px;
+    background-color: black;
+}
+
+.titulo-footer{
+font-size: 20px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+margin-left: 40px;
+}
+
+.list-unstyled{
+list-style:none
+}

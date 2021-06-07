@@ -1,7 +1,8 @@
-import {ItemCount} from "../itemCount/itemCount"
+
 import {Link} from "react-router-dom"
-import  { useContext, useState} from "react"
+import  { useContext, useState, useEffect} from "react"
 import {CartContext} from "../../context/cartContext/cartContext"
+import "./itemDetail.css"
 
 export const ItemDetail = ({ item }) =>{
   
@@ -14,28 +15,44 @@ const goToPayment = () =>{
 addToCart(item.id, item.price,item.imageId,item.stock, item.name, qty)
 
 }
+
+
 return(
     <main>
-    
-       <div>
-         <h1>{item.name}</h1>
-         <h4>{item.price}</h4>
-         <img className="imagen" src={item.imageId} alt="producto" />
-        <ItemCount stock={item.stock} initial={1} qty={qty} setQty={setQty}/>
+    <h1 className="titulo-detail">Informacion sobre el producto</h1>
+       <div className="detail" >
 
-        
-          <button>  <Link to="/carrito/:carritoId"  onClick={()=>{goToPayment()
+
+       <img className="imagen-detail" src={item.imageId} alt="producto" />
+       
+          <h1>{item.name}</h1>
+         <h2>Precio: ${item.price}</h2>
+         <h3>{item.description}</h3> 
+         
+          
+
+         <button className="boton-detail">  <Link to="/carrito/:carritoId"  onClick={()=>{goToPayment()
             }}
             > Añadir al carrito
             </Link></button>
-       
-</div>
+
+            </div>
+
+
+
+         <div>
+    
+  <div>
+   
+            </div>
+            </div>
+
 
 <Link   to="/"
         onClick={() => {
           setQty(0);
-        }}>
-            volver
+        }}><button className="boton-detail-volver">volver</button>
+           
         </Link>
 </main>
 

@@ -11,7 +11,7 @@ export const  CartProvider = ({children}) =>{
 //Añadir al carrito
 const addToCart = (id,price,imageId,stock,name, qty) => {
     console.log(name)
-    const existingIndex = cart.findIndex((item) => item.name === name);
+    const existingIndex = cart.findIndex((item) => item.id === id);
      
     
     if (existingIndex >= 0) {
@@ -38,21 +38,90 @@ const addToCart = (id,price,imageId,stock,name, qty) => {
 
 //Cantidad de productos totales
 const productsCount= () =>{
-    return cart.length
+
+  let count = 0
+   cart.forEach((item)=>{
+count+=item.qty
+
+   })
+return count
 }
+
+const totalPrice = () =>{
+
+  let count= 0
+  cart.forEach((item) => {
+count+=item.price * item.qty
+
+  })
+return count
+
+}
+
+
+
 
 //Remover del carrito
 const removeFromCart = (itemInCart) => {
     const existingIndex = cart.findIndex((item) => item.id === itemInCart.id);
     const cartCopy = Array.from(cart);
-
+console.log(existingIndex)
     if (existingIndex >= 0) {
       cartCopy.splice(existingIndex, 1);
       setCart(cartCopy);
     }
   };
+
+
+
+
+  const sumar = (item) =>{
+
+const existingIndex = cart.findIndex((product) => product.id === item.id);
+console.log(cart)
+if(cart[existingIndex].qty<cart[existingIndex].stock){
+
+ const newCart = [...cart] 
+ newCart[existingIndex] =
+ { 
+     ...cart[existingIndex],
+   qty: cart[existingIndex].qty + 1,
+  
+}
+console.log(newCart)
+setCart(newCart)
+}
+
+} 
+
+
+  const restar = (item) =>{
+    
+    const existingIndex = cart.findIndex((product) => product.id === item.id);
+console.log(existingIndex)
+
+
+  
+  if(item.qty>1){
+    
+  const newCart = [...cart]
+   newCart[existingIndex ]= {
+      ...cart[existingIndex],
+      qty: cart[existingIndex].qty - 1,
+    
+    }
+setCart(newCart)
+
+  } else  {
+    removeFromCart(item)
+
+  }
+
+ }
+
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart,  productsCount }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart,  productsCount , totalPrice, sumar, restar}}>
          {children} 
           </CartContext.Provider>
     )
@@ -79,29 +148,3 @@ const removeFromCart = (itemInCart) => {
 
 
 
-
-
-// const addToCart = (id,price,imageId,stock,name, qty) => {
-//     const existingIndex = cart.findIndex((item) => item.id === id)
-    
-
-//     if(existingIndex>=0){
-
-//     }
-
-
-//     setCart ([...cart, {
-//         id:id,
-//     price:price,
-// imageId:imageId,
-//     stock:stock,
-//     name:name,
-//     qty:qty,
-    
-
-// }])
-
-//     setQuantity(cart.length)
-   
-    
-// }

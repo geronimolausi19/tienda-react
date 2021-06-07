@@ -6,12 +6,15 @@ export const Item = ({item}) => {
   
 
   return(
-  <div className="carts" >
-    <h1>{item.name}</h1>
-    <h2>{item.description}</h2>
-    
-    <img className="imagen" src={item.imageId} alt="producto" />
-    <button ><Link to={`/detail/${item.id}`} > Vamos al producto</Link></button>
+  <div >
+
+    <h1 clasname="letter">{item.name}</h1>
+  
+  <div >
+    <img  src={item.imageId} alt="producto" />
+    </div>
+
+    <button className="boton"><Link to={`/detail/${item.id}`} > Vamos al producto</Link></button> 
 
     
     </div>

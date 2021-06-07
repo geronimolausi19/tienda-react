@@ -1,0 +1,12 @@
+.titulo{
+    font-family: 'New Rocker', cursive;
+    font-size:90px ;
+  
+    color: rgb(117, 63, 205);
+  text-align: center;
+}
+
+
+.tamaño{
+  padding-bottom: 4rem;
+}

@@ -1,7 +1,9 @@
 import React, { useState, useEffect} from "react"
+import "./itemCount.css"
+
 import {Link} from "react-router-dom"
 export const ItemCount = ({stock, initial, qty, setQty}) => {
-   
+
 
 
 const Sumar = () => {         
@@ -25,11 +27,19 @@ useEffect(() => {
 
 
 return (   
-  <div>        
-    <div>
-        <button onClick={Sumar} > + </button>
-        <p>Cantidad de items en el carrito, {qty} </p>
-        <button onClick={Restar} > - </button>
+  <div> 
+
+          <p>Cantidad de items en el carrito: {qty} </p> 
+    <div className="count-container" >
+        <div >
+           <button className="restar"  onClick={Restar} > - </button>
+        </div>
+        
+        <div >
+        <button className="sumar"  onClick={Sumar}  > + </button>
+        </div>
+     
+
         </div>
 <br/>
 <div>

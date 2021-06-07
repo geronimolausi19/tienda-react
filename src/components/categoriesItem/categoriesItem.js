@@ -1,4 +1,4 @@
-import {ItemCount} from "../itemCount/itemCount"
+
 import {Link} from "react-router-dom"
 import  { useContext, useState} from "react"
 import {CartContext} from "../../context/cartContext/cartContext"
@@ -17,29 +17,25 @@ console.log(item.name)
 
 return(
     <main>
-    
-       <div>
-           {}
-         <h1 >{item.name}</h1>
-         <h4 className={hasDiscount ? "withDiscount" : null}  >{item.price}</h4>
-         <img className="imagen" src={item.imageId} alt="producto" />
-        <ItemCount stock={item.stock} initial={1} qty={qty} setQty={setQty}/>
+    <div >
 
-        
-          <button>  <Link to="/carrito/:carritoId"  onClick={()=>{goToPayment()
+       <div>
+         <h1 >{item.name}</h1>
+         
+         <img src={item.imageId} alt="producto" />
+       <div>
+          <button className="botonDetail">  <Link to={`/detail/${item.id}`} onClick={()=>{goToPayment()
             }}
-            > Añadir al carrito
-            </Link></button>
-       
+            > Vamos al producto
+            </Link></button>  
+            </div>
 </div>
 
-<Link   to="/"
-        onClick={() => {
-          setQty(0);
-        }}>
-            volver
-        </Link>
+</div>
+
+
     
        
 </main>
+
 )}

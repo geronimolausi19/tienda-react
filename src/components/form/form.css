@@ -1,0 +1,96 @@
+.titulo-form{
+
+    font-size: 30px;
+    text-align: center;
+    font-family: 'New Rocker', cursive;
+font-size: 40px;
+ 
+}
+
+
+.wrapper{
+    width: 500px;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0px, 0px,10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.wrapper .input-data{
+height: 40px;
+width: 100%;
+position: relative;
+outline: none;
+padding-top: 7px;
+
+
+}
+
+.wrapper .input-data input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 17px ;
+
+
+}
+
+
+
+
+.wrapper .input-data label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;    
+    color: grey;
+    pointer-events: none       ;
+    transition: all 0.3 ease;
+}
+
+.wrapper .input-data .underline{
+    position: absolute;
+    bottom:0px; 
+    height: 2px;
+    width: 100%;
+    background:rgb(117, 63, 205) ;
+}
+
+ .input-data .underline:before{
+
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: rgb(117, 63, 205);
+    transform: scaleX(0);
+    transition: trasnform 0.3s ease;
+}
+
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~.underline:before{
+    transform: scaleX(1);
+}
+
+
+
+.boton-form{
+    font-family: 'New Rocker', cursive;
+		display: inline-block;
+		color: black;
+		padding: 1em 2em;
+		margin-top: 50px;
+		margin-bottom: 20px;
+		-webkit-appearance: none;
+		appearance: none;
+	background-color: white;
+		
+		border-radius: 4px;
+		border: none;
+		cursor: pointer;
+		position: relative;
+		transition: transform ease-in 0.1s, box-shadow ease-in 0.15s;
+		box-shadow: 0 2px 25px  rgb(117, 63, 205);
+		margin-left: 220px;
+}
+

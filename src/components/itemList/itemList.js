@@ -1,5 +1,6 @@
+
 import {Item} from "../item/item"
-import "../item/item.css"
+import "./itemList.css"
 import {getFirestore} from "../../firebase/index"
 
 import { useEffect, useState } from "react"
@@ -11,42 +12,29 @@ const [items, setItems ] = useState([])
 
 
 
-useEffect(()=> 
+useEffect( async ()=> 
 {const db = getFirestore();
-  const items = db.collection("items");
+  const items = db.collection("items").where("stock",">",0);
 
-  items.get().then((snapshot) => {
-    const data = snapshot.docs.map((doc) => ({id: doc.id,...doc.data()
-      ,}
-      ))
+  await items.get().then((snapshot) => {
+    const data =  snapshot.docs.map((doc) => ({id: doc.id,...doc.data()}))
       setItems(data)});
       
     },[])
-
-
-
-
-
 return(
-<div>
-  
- 
 
- <div className="div-carts">
+ <div className="div-container">
 
           {items.map( (item) => 
           
-            <Item item={item} />
+           <div className="carts"> <Item item={item} /> </div>
             
           )} 
       
         </div>
+        
  ) 
-        </div>
-
-
-       
-)
+        
 }
 
 
