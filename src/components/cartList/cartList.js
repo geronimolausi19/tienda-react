@@ -20,8 +20,7 @@ export const CartList = ({item}) => {
 
 <img className="imagen" src={item.imageId} alt="producto" />
 <h1 className="item-name">{item.name}</h1>
-{/* 
-<ItemCount stock={item.stock} initial={qty} qty={qty} setQty={setQty}/> */}
+
 <button className="boton-cart-list" onClick={()=>{restar(item)}}>-</button>
 
 <h2>${calculatePrice(item.price, item.qty)}</h2>

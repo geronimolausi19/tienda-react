@@ -6,7 +6,7 @@
     background-position: 50%;
     background-size: contain;
     background-repeat: no-repeat;
- height: 590px;
+ height: 650px;
  width: 500px;
     overflow: hidden;
 margin-top: 60px;
@@ -27,7 +27,7 @@ margin-left: 500px;
 		color: black;
 		padding: 1em 2em;
 		
-		margin-top: 40px;
+
 		-webkit-appearance: none;
 		appearance: none;
 	background-color: white;

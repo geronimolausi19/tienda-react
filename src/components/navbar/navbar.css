@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: space-between;
   background-color: rgb(117, 63, 205);
+
   }
   
   .links{
@@ -30,4 +31,17 @@
   
   .active-nav{
     background-color: rgb(87, 30, 87);
+  }
+
+  .grids{
+    
+      display: -ms-inline-grid;
+      align-items: stretch;
+      grid-template-columns: 1fr 1fr;
+  
+
+  }
+
+  .carts{
+    margin-right: 10px;
   }

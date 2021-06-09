@@ -25,11 +25,11 @@ function App() {
       <Home/>
     </Route>
     
-    <Route  path="/carrito/:carritoId">
+    <Route  path="/carrito">
 <Cart/>
     </Route>
 
-    <Route path="/detail/:productId">
+    <Route path="/item/:productId">
       <ItemDetailContainer />
     </Route>
    
@@ -41,6 +41,8 @@ function App() {
    <Route path="/form/formId">
     <Form/>
    </Route>
+
+   
 
     </Switch>
 

@@ -5,7 +5,7 @@ import {Modal} from "../modal/modal"
 import {CartContext} from "../../context/cartContext/cartContext"
 import {Link} from "react-router-dom"
 import React from "react"
-import {GlobalStyle} from "../globalStyled/globalStyle"
+
 
 
 export const Cart = () =>{
@@ -14,7 +14,7 @@ export const Cart = () =>{
     const [showModal, setShowModal] = useState(false)
 
 const openModal = () =>{
-    setShowModal(true)
+    setShowModal(true)  
 }
 
 
@@ -50,7 +50,7 @@ const closeModal = () =>{
 <button className="boton-cart" onClick={openModal} > Finalizar Compra </button>
 {showModal && <Modal showModal={showModal} setShowModal={setShowModal} closeModal={closeModal}/>}
 
-
+<Link to="/"><button className="boton-cart">Seguir comprando!!</button></Link>
 </div>
 
 
@@ -79,23 +79,3 @@ const closeModal = () =>{
 
 
 
-// const db= getFirestore()
-//  const itemsToUpdate= db.collection("items")
-//  .where(firebase.firestore.FieldPath.documentId(), "in", items.map(i =>i.id))
-
-//  const query =  itemsToUpdate.get()
-//  const batch = db.batch()
-
-//    const outOfStock=[]         
-//    query.docs.forEach((docSnapshot, idx) =>{
-//        if(docSnapshot.data().stock >= items[idx].qty){
-//            batch.update(docSnapshot.ref, { stock: docSnapshot.data().stock - items[idx].qty })
-//        }else {
-//            outOfStock.push({...docSnapshot.data(), id:docSnapshot.id})
-//        }
-//    } )
-
-//    if(outOfStock.length=== 0) {
-//          batch.commit()
-//    }
-       

@@ -121,7 +121,7 @@ setCart(newCart)
 
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart,  productsCount , totalPrice, sumar, restar}}>
+        <CartContext.Provider value={{ cart,setCart, addToCart, removeFromCart,  productsCount , totalPrice, sumar, restar}}>
          {children} 
           </CartContext.Provider>
     )

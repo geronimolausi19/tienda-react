@@ -1,9 +1,9 @@
 import { useState, useEffect} from "react"
 import { Link } from "react-router-dom"
 import { useParams } from "react-router-dom"
+import "./categoriesList.css"
 
- 
-
+import { NavLink } from "react-router-dom"
 
  export const CategoriesList = () => {
    const { categoriaId } = useParams()
@@ -16,13 +16,14 @@ import { useParams } from "react-router-dom"
 
 
   return (
- <div>
-     <a onClick={() => setProductosCategoria(!productosCategoria)}> {categoryData.map((categoria) => (
-           <Link to={`/categoria/${categoria.name}`}>{categoria.name}  </Link>
-       ))}</a>
+ 
+     <a onClick={() => setProductosCategoria(!productosCategoria)}><div className="grids"> {categoryData.map((categoria) => (
 
 
-   </div>
+          <div> <Link to={`/categoria/${categoria.name}`}> <p className="links"> {categoria.name} </p>  </Link>
+          </div>
+       ))} </div>    </a>
+
 
 
  );

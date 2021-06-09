@@ -17,27 +17,26 @@ return (
 
  <NavLink className="titulo-nav link-titulo"
   to={"/"}>Mestiza</NavLink> 
- <p><FontAwesomeIcon icon={faGlobe}/></p>
- <p><FontAwesomeIcon icon={faGlobe}/></p>
- <p><FontAwesomeIcon icon={faGlobe}/></p>       
+  
+  <p><FontAwesomeIcon icon={faGlobe}/></p>   
 
+
+<CategoriesList/>
+
+<p><FontAwesomeIcon icon={faGlobe}/></p> 
 
  <nav className="navigation">
          <ul className="links">
            <li className="link">
 <NavLink
 to={"/carrito/:carritoId"}
- className="link-titulo"
-  activeClassName="active-nav"
+ className="link-titulo cart"
+ 
   >
-  <CartWidget/> <span>({productsCount()})</span>
+  <CartWidget/> {productsCount()}
    </NavLink>
              </li>
 
-<li>
-<CategoriesList/>
-  
-</li>
 
 
          </ul>

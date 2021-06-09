@@ -5,29 +5,63 @@ import { getFirestore } from '../../firebase';
 import {CartContext} from "../../context/cartContext/cartContext"
 import {useContext} from "react"
 import "./form.css"
+import { Link } from 'react-router-dom';
+
 export const Form = () => {
-  const {cart} = useContext(CartContext)
-
-
-
-
-
+  const {cart, setCart} = useContext(CartContext)
 
 
 const [values, setValues] = useState ({
   name:"",
   phone:"",
-  email:""
+  email:"",
+  emailRepeat:""
 })
-const [orderId, setOrderId]= useState ([])
+const [orderId, setOrderId]= useState (false)
+
+const [linkToOrder, setLinkToOrder] = useState(false)
+
+const [isDisableButton, setIsDisableButon] = useState(false)
+
+
+
+const order = () => {
+
+setLinkToOrder(true)
+
+}
+const onClick = () => {
+  order()
+  handleSave()
+ 
+}
+
+const vaciarCarrito= () =>{
+
+  setCart([])
+}
+
+
+
+useEffect(() => {
+
+ const newIsDisableButtom = !(
+   values.name   &&
+   values.phone  &&
+    (values.email === values.emailRepeat)
+   )
+   
+ 
+setIsDisableButon(newIsDisableButtom  )
+
+}, [values.name, values.phone, values.email])
+
 
 
 
 
 const fire = () =>{
- 
-
-
+ console.log("funciono")
 const db= getFirestore()
  const orders =db.collection("orders")
  
@@ -36,30 +70,22 @@ const newOrder={
   items:cart
 
 }
- orders.add(newOrder).then(({id}) =>
+ orders.add(newOrder)
+ .then(({id}) =>
  setOrderId(id)           )
  }
 
 
+
+
 const handleSave = () =>{
 
- if(values["email"] === values["email-repeat"]){
+ if(values["email"] === values["emailRepeat"]){
    fire()
    actualizar()
- }else {
-   alert("error")
  }
-
-}
-
-
-
-
-
-
-
-
-
+ }
+ 
 
 const actualizar =  async() =>{
   const db = getFirestore()
@@ -88,13 +114,10 @@ const  {id, value} = e.target
 
   }
 
-
-
-
-
   return (
 <form   onSubmit={handleSubmit}>
-    <h2 className="titulo-form">Formulario</h2>
+    <h2 className="titulo-form">Formulario</h2> 
+  <p className="p-form">El boton se activara cuando los mails sean iguales y los campos esten completos.</p>
 <div className="wrapper">
 <div className="input-data">
     
@@ -113,7 +136,9 @@ const  {id, value} = e.target
 
 <div className="input-data">
 
-<input type="text" id="email-repeat" required placeholder="Repetir mail" onChange={handleInput}></input>  
+<input type="text" id="emailRepeat" required placeholder="Repetir mail" onChange={handleInput}></input>  
+
+
 <div className="underline"></div>
 
 </div>
@@ -129,7 +154,11 @@ const  {id, value} = e.target
 </div>
 
 
-<button onClick={handleSave} className="boton-form"> Enviar informacion </button> 
+<button disabled={isDisableButton} 
+             onClick={onClick}  className="boton-form"> Enviar informacion </button> 
+
+{linkToOrder && <div className="order"><p> Muchas gracias por comprar con nosotros, su numero de orden es: {orderId}</p> <button className="boton-vaciar" onClick={vaciarCarrito}>Vaciar Carrito </button> </div>} 
+
 
     </form>
   )

@@ -24,8 +24,8 @@ return(
          
          <img src={item.imageId} alt="producto" />
        <div>
-          <button className="botonDetail">  <Link to={`/detail/${item.id}`} onClick={()=>{goToPayment()
-            }}
+          <button className="botonDetail">  <Link to={`/item/${item.id}`} 
+            
             > Vamos al producto
             </Link></button>  
             </div>

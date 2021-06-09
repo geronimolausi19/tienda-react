@@ -3,6 +3,7 @@ import "./modal.css"
 import {Form} from "../form/form"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import{faTimes} from "@fortawesome/free-solid-svg-icons"
+
 export const Modal = ({showModal, setShowModal, closeModal}) => {
 
 const handleModalDialogClick = e=>{

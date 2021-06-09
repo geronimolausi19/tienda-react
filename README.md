@@ -1,3 +1,9 @@
+Online shop
+
+Mestiza es una tienda online que se especifica en remeras rockeras. Esta pensada y diseñada, para que el cliente se sienta comodo y fluya entre los productos. Puede elegir entre remeras de bandas nacionales o internacionales, si elije la opcion correctar del navbar. El color violeta y la tipografia incluye a ambos generos, por que el rock tambien es para las mujeres...
+Al entrar observamos el catalogo entero, sin discriminar por nacionalidad, aqui queremos sorprender con la gran variedad de remeras, y de una manera simple, sin preocuparse por el precio. Si accedemos al detalle del producto, toda la informacion se encuntra a nuestra dispocision, con la opcion de elegir si quiere una o mas remeras. Aqui un boton de añadir al carrito, predeciblemente nos lleva a el. En el carrito, se despliega un nuevo catalogo que nos muestra los productos selecionados, su precio, y nuevamente nos da la opcion de sumar la cantidad, restarla o remover el item del carrito. Un boton nos da la opcion de seguir comprando, o desde ya en el navbar podemos acceder a cualquier parte de la tienda. Para finalizar la compra, tenemos que llenar un formulario que aparece, sobre el carrito tocando el boton de Finalizar Compra, si seguimos todos los parametros del formulario a la perfeccion, se habilitara un boton que nos dara el numero de orden y la opcion de vaciar el carrito, para seguir y seguir y seguir comprando.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

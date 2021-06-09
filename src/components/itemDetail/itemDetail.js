@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import  { useContext, useState, useEffect} from "react"
 import {CartContext} from "../../context/cartContext/cartContext"
 import "./itemDetail.css"
-
+import {ItemCount} from "../itemCount/itemCount"
 export const ItemDetail = ({ item }) =>{
   
 const [qty, setQty] = useState(1)
@@ -29,10 +29,9 @@ return(
          <h2>Precio: ${item.price}</h2>
          <h3>{item.description}</h3> 
          
-          
+          <ItemCount stock={item.stock} qty={qty} setQty={setQty} />
 
-         <button className="boton-detail">  <Link to="/carrito/:carritoId"  onClick={()=>{goToPayment()
-            }}
+         <button onClick={goToPayment} className="boton-detail">  <Link to="/carrito"  
             > Añadir al carrito
             </Link></button>
 
