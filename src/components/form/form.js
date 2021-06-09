@@ -17,8 +17,10 @@ const [values, setValues] = useState ({
   email:"",
   emailRepeat:""
 })
+//numero de order
 const [orderId, setOrderId]= useState (false)
 
+//
 const [linkToOrder, setLinkToOrder] = useState(false)
 
 const [isDisableButton, setIsDisableButon] = useState(false)
@@ -203,47 +205,10 @@ const  {id, value} = e.target
 
 
 
-// <form onSubmit={handleSubmit}>
-// <div  >
-//   <label for="name">Name</label>
-// <input type="text" placeholder="Name" id="name" onChange={handleInput} >hi</input>
-
-//  </div>
-//  <div>
-//   <label for="exampleEmail">Email</label>
-//   <input type="text" placeholder="Email" id="email"  onChange={handleInput}> i</input>
-// </div>
-
-// <div>
-//   <label for="phone">Phone</label>
-//   <input type="phone" placeholder="Phone" id="phone" onChange={handleInput} >h</input>
-// </div>  
-// <button >Save</button>
-// </form> 
-// )
 
 
 
 
-
-
-
-
-// export const Form = ({ id, label, value, onChange, required }) => {
-//   return (
-//     <div >
-      
-//       <label >
-//         {label} {required ? '*' : ''}
-//       </label>
-//       <input
-//         type="text"
-//         onChange={({ target }) => onChange(id, target.value)}
-//         value={value}
-//       />
-//     </div>
-//   );
-// };
 
 
 
